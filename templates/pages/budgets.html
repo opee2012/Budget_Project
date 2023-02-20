@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Budgets</title>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+	<header>
+        {% extends "home.html" %}
+
+        {% block content %}
+          <h2>Budgets</h2>
+          <p>This is the Budgets page.</p>
+        {% endblock %}
+    {% block navigation %}
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="#">Budgets</a></li>
+          <li><a href="#">Expenses</a></li>
+          <li><a href="#">Reports</a></li>
+        </ul>
+      </nav>
+    {% endblock %}
+    </header>
+</body>
+</html>

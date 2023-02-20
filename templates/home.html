@@ -8,17 +8,20 @@
 <body>
 	<header>
       <h1>Budget App</h1>
+        {% block navigation %}
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Budgets</a></li>
+          <li><a href="{{ url_for('budgets') }}">Budgets</a></li>
           <li><a href="#">Expenses</a></li>
           <li><a href="#">Reports</a></li>
-          <li id="login-button"><a href="#">Log in</a></li>
+          <li><a href="{{ url_for('login') }}">Log in</a></li>
         </ul>
       </nav>
+        {% endblock %}
     </header>
 	<main>
+{% block content %}
 		<section class="intro">
 			<h2>Manage your finances with ease</h2>
 			<p>Our budget app helps you track your income and expenses, create and manage budgets, and visualize your financial data in easy-to-understand charts and graphs.</p>
@@ -33,11 +36,11 @@
 				<li></li>
 			</ul>
 		</section>
+{% endblock %}
 	</main>
 	<footer>
 		<p>&copy; 2023 Budget App. All rights reserved.</p>
 	</footer>
-	<script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
 <!-- Login popup -->
 <div id="login-popup">
     <div class="popup-content">
@@ -52,25 +55,5 @@
         <div class="close-button">&times;</div>
     </div>
 </div>
-<script>
-    // Get the login button and popup elements
-    var loginButton = document.getElementById("login-button");
-    var loginPopup = document.getElementById("login-popup");
-
-    loginButton.addEventListener("click", function() {
-      loginPopup.style.display = "block";
-    });
-
-    var closeButton = loginPopup.querySelector(".close-button");
-    closeButton.addEventListener("click", function() {
-      loginPopup.style.display = "none";
-    });
-
-    window.addEventListener("click", function(event) {
-      if (event.target == loginPopup) {
-        loginPopup.style.display = "none";
-      }
-    });
-</script>
 </body>
 </html>
